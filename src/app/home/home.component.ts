@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
   episodies: Array<any> = new Array()
   episodie: Array<any> = new Array()
   imgEpisodie: Array<any> = new Array()
-  //url = 'https://rickandmortyapi.com/api/episode'
 
   constructor(private router: Router, private _serviceEpisodie: EpisodieService) {}
 
@@ -29,7 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   getImgEpisodie(characters: string ){
-/*     this._serviceEpisodie.getImgEpisodie(characters)
+      /* this._serviceEpisodie.getImgEpisodie(characters)
      .subscribe((result) => {
         this.imgEpisodie = result.image.toString()
       });
