@@ -21,9 +21,8 @@ export class HomeComponent implements OnInit {
   getEpisodies() {
     this._serviceEpisodie.getEpisodies()
      .subscribe((episodes) => {
-      this.episodies = episodes.results
-      this.episodie = this.episodies
-      console.log(this.episodies , 'episodies')
+        this.episodies = episodes.results
+        this.episodie = this.episodies
       }); 
   }
 
