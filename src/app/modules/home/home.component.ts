@@ -23,17 +23,15 @@ export class HomeComponent implements OnInit {
      .subscribe((episodes) => {
         this.episodies = episodes.results
         this.episodie = this.episodies
-      }); 
-  }
 
-  getImgEpisodie(characters: string ){
-      /* this._serviceEpisodie.getImgEpisodie(characters)
-     .subscribe((result) => {
-        this.imgEpisodie = result.image.toString()
-      });
-      return this.imgEpisodie */
-     let result = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
-     return result 
+        this.episodie.map((el: any ) =>{
+          this._serviceEpisodie.getImgEpisodie(el.characters[0])
+          .subscribe((result) => {
+              this.imgEpisodie = result.image.toString()
+              console.log(this.imgEpisodie , 'this.imgEpisodie')
+            });
+        })
+      }); 
   }
 
   applyFilter(e: Event){

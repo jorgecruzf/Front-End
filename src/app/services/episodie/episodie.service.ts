@@ -13,15 +13,13 @@ export class EpisodieService {
     constructor(private router: Router, private http: HttpClient) { }
 
     getEpisodies() {
-
         let result =this.http.get<any>(this.SERVICE_URL_API)
         return result
     }
 
     getImgEpisodie(characters: string){
         console.log(characters, 'parameters');
-        //let result = this.http.get<any>(characters)
-        let result = "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        let result = this.http.get<any>(characters)
         return result
     }
 
